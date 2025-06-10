@@ -1,0 +1,21 @@
+ldap_server_conf:
+  host: 127.0.0.1
+  port: 389
+  base: dc=elst,dc=dev
+  login_dn: cn=admin,dc=elst,dc=dev
+  password: Elst@2025
+  user_dn: ou=People,dc=elst,dc=dev
+  group_dn: ou=Group,dc=elst,dc=dev
+  default_home_path: /home
+  default_bash: /bin/bash
+  password_encryption: SHA1
+
+ldap_adm:
+  uid: /etc/ldapadm/UID
+  gid: /etc/ldapadm/GID
+  uid_lock_file: /tmp/ldapadm_uid.lock
+  gid_lock_file: /tmp/ldapadm_gid.lock
+  min_gid: 1000
+  max_gid: 65535
+  min_uid: 1000
+  max_uid: 65535
