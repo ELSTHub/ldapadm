@@ -18,7 +18,14 @@ bash install.sh
 ```
 
 ### 编译构建
-1、克隆代码仓库
 ```shell
-git clone 
+git clone https://github.com/ELSTHub/ldapadm.git
+cd ldapadm
+go get .
+
+# Windows
+./scripts/build.bat
+
+# Linux 
+# bash ./scripts/build.sh
 ```
