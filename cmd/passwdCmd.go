@@ -27,12 +27,12 @@ var modifyPasswdCmd = &cobra.Command{
 			fmt.Println("only modify user.")
 			return
 		}
-		ldap.UpdateUser(passwdOpts)
+		ldap.ModifyPassword(passwdOpts)
 	},
 }
 
 func init() {
-	modifyPasswdCmd.Flags().StringVar(&passwdOpts.Username, "username", "", "Username")
-	modifyPasswdCmd.Flags().StringVar(&passwdOpts.Password, "password", "", "Password")
-	passwdCmd.AddCommand(addUserCmd)
+	modifyPasswdCmd.Flags().StringVarP(&passwdOpts.Username, "username", "U", "", "Username")
+	modifyPasswdCmd.Flags().StringVarP(&passwdOpts.Password, "password", "p", "", "Password")
+	passwdCmd.AddCommand(modifyPasswdCmd)
 }

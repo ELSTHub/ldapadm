@@ -12,7 +12,6 @@ func ConfInit() error {
 	home, _ := os.UserHomeDir()
 	viper.AddConfigPath(home + "/.etc")
 	viper.AddConfigPath("./etc")
-	viper.AddConfigPath("../etc")
 	err := viper.ReadInConfig()
 	if err != nil {
 		return err

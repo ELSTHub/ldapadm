@@ -7,7 +7,7 @@ mkdir dist\linux\bin
 
 go env -w GOOS=linux
 go env -w CGO_ENABLED=0
-go build -o dist/linux/bin/ldapadm .\main.go
+go build -ldflags "-s -w" -o dist/linux/bin/ldapadm .\main.go
 echo "Linux build success!"
 
 mkdir dist\linux\etc

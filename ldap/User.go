@@ -123,6 +123,18 @@ func UpdateUser(info *UserInfo) {
 	}
 }
 
+func ModifyPassword(info *UserInfo) {
+	var attributeMap = make(map[string][]string, 0)
+	if info.Password != "" {
+		attributeMap["userPassword"] = []string{info.Password}
+	}
+	err := UpdateLdapInfo(attributeMap, fmt.Sprintf("uid=%s,%s", info.Username, viper.GetString("ldap_server_conf.user_dn")))
+	if err != nil {
+		fmt.Printf("创建LDAP账号异常：%v", err)
+		return
+	}
+}
+
 func GetUserInfo(info *UserInfo) {
 	var filter = "(objectClass=posixAccount)"
 	entries, err := SearchLDAPInfo(fmt.Sprintf("uid=%s,%s", info.Username, viper.GetString("ldap_server_conf.user_dn")), filter)

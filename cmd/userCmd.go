@@ -78,7 +78,7 @@ func init() {
 		modifyUserCmd.Flags().IntVarP(&userOpts.GID, "gid", "g", -1, "GID")
 		modifyUserCmd.Flags().StringVarP(&userOpts.HomeDir, "home_dir", "d", "", "Home Dir")
 		modifyUserCmd.Flags().StringVarP(&userOpts.Shell, "shell", "s", "", "Shell")
-		addUserCmd.Flags().StringVarP(&userOpts.ExpireAt, "expire", "e", "", "Expire Date Example: 2006-01-02T15:04:05")
+		modifyUserCmd.Flags().StringVarP(&userOpts.ExpireAt, "expire", "e", "", "Expire Date Example: 2006-01-02T15:04:05")
 		userCmd.AddCommand(modifyUserCmd)
 		showUserInfo.Flags().StringVarP(&userOpts.Username, "username", "U", "", "Username")
 		userCmd.AddCommand(showUserInfo)
