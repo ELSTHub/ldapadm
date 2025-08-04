@@ -10,7 +10,7 @@
 ### 安装方式
 1、下载并解压文件  
 ```shell
-wget https://github.com/ELSTHub/ldapadm/releases/download/linux-v0.1.0.tar.gz
+wget https://github.com/ELSTHub/ldapadm/releases/download/v0.1.0/linux-v0.1.0.tar.gz
 ```
 2、执行安装脚本
 ```shell
