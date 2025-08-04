@@ -1,6 +1,6 @@
 # LDAP ADM
 
-这是一个轻量管理ldap账号的信息的cli命令行工具，无需编辑复杂的ldif文件，即可快速管理user，group，ou等信息。
+这是一个轻量管理ldap账号的信息的cli命令行工具，无需编辑复杂的ldif文件，即可快速管理user，group等信息。
 
 ### 特点：
 1、使用简单  
@@ -10,7 +10,7 @@
 ### 安装方式
 1、下载并解压文件  
 ```shell
-wget 
+wget https://github.com/ELSTHub/ldapadm/releases/download/linux-v0.1.0.tar.gz
 ```
 2、执行安装脚本
 ```shell
