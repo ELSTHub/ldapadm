@@ -9,14 +9,15 @@ import (
 )
 
 type UserInfo struct {
-	Username string
-	Password string
-	UID      int
-	GID      int
-	Group    string
-	HomeDir  string
-	Shell    string
-	ExpireAt string
+	Username        string
+	Password        string
+	UID             int
+	GID             int
+	Group           string
+	HomeDir         string
+	Shell           string
+	ExpireAt        string
+	AutoCreateGroup bool
 }
 
 func AddUser(info *UserInfo) {
@@ -36,6 +37,18 @@ func AddUser(info *UserInfo) {
 			return
 		}
 		info.GID = gid
+	}
+
+	if info.AutoCreateGroup {
+		var groupInfo = new(GroupInfo)
+		if info.Group == "" {
+			info.Group = info.Username
+		}
+		groupInfo.GroupName = info.Group
+		groupInfo.GID = info.GID
+		groupInfo.UserList = make([]string, 0)
+		groupInfo.UserList = append(groupInfo.UserList, info.Username)
+		AddGroup(groupInfo)
 	}
 
 	var attributeMap = make(map[string][]string, 0)
