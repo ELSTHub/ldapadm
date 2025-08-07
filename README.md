@@ -10,7 +10,7 @@
 ### 安装方式
 1、下载并解压文件  
 ```shell
-wget https://github.com/ELSTHub/ldapadm/releases/download/v0.1.0/linux-v0.1.0.tar.gz
+wget https://github.com/ELSTHub/ldapadm/releases/download/${VERSION}/linux-${VERSION}.tar.gz
 ```
 2、执行安装脚本
 ```shell
@@ -43,7 +43,7 @@ ldap_server_conf:
   group_dn: ou=Group,dc=elst,dc=dev # 用户组所属OU
   default_home_path: /home # 用户默认HOME目录
   default_bash: /bin/bash # 用户默认bash
-  password_encryption: SHA1 # 用户密码加密算法（MD5、SHA1）
+  password_encryption: SHA1 # 用户密码加密算法（支持: MD5、MD5-Crypt、SMD5、SHA1、SSHA、SHA-256-Crypt、SHA-512-Crypt），非支持的加密类型均为明文密码
 
 ldap_adm:
   uid: /etc/ldapadm/UID # 下一个UID 编号

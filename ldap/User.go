@@ -64,6 +64,7 @@ func AddUser(info *UserInfo) {
 		attributeMap["homeDirectory"] = []string{info.HomeDir}
 	}
 	if info.Password != "" {
+		info.Password = utils.EncipherLdapPass(info.Password, viper.GetString("ldap_server_conf.password_encryption"))
 		attributeMap["userPassword"] = []string{info.Password}
 	}
 

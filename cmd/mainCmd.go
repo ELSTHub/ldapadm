@@ -3,14 +3,16 @@ package cmd
 import (
 	"fmt"
 	"github.com/spf13/cobra"
+	"ldapadm/Version"
 	"ldapadm/config"
 	"os"
 )
 
 var mainCmd = &cobra.Command{
-	Use:   "ldapadm",
-	Short: "LDAP administrator CLI tool",
-	Long:  "LDAP administrator CLI tool",
+	Use:     "ldapadm",
+	Short:   "LDAP administrator CLI tool",
+	Long:    "LDAP administrator CLI tool",
+	Version: Version.VERSION,
 }
 
 func Execute() {
