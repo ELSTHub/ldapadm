@@ -1,11 +1,6 @@
 @echo off
 
-if "%1"=="" (
-    echo 请提供当前版本参数!
-    echo 使用方法: %0 <VERSION>
-    exit /b 1
-)
-set VERSION=%1
+set VERSION=v0.2.0
 
 rmdir /s /q .\dist
 mkdir dist

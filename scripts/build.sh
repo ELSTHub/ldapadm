@@ -1,15 +1,7 @@
 #!/bin/bash
 
-# 检查是否提供了至少一个参数
-if [ $# -eq 0 ]; then
-    echo "请提供当前版本参数!"
-    echo "使用方法: $0 <VERSION>"
-    exit 1
-fi
-
-
 rm -rf dist
-VERSION=$1
+VERSION=v0.2.0
 
 go env -w GOOS=linux
 go env -w CGO_ENABLED=0
